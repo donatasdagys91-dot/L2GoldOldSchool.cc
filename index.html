@@ -5,155 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L2 Gold - The Legend Returns (OldSchool)</title>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: #111;
-            color: #ddd;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: #1c1c1c;
-            padding: 20px;
-            border: 1px solid #333;
-            border-radius: 5px;
-        }
-        header {
-            text-align: center;
-            border-bottom: 2px solid #444;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-        h1 {
-            color: #d4af37;
-            margin: 0;
-            font-size: 2.5em;
-            text-shadow: 2px 2px 4px #000;
-        }
-        nav {
-            text-align: center;
-            margin-bottom: 30px;
-            position: sticky;
-            top: 0;
-            background: #1c1c1c;
-            padding: 10px 0;
-            border-bottom: 1px solid #222;
-            z-index: 100;
-        }
-        nav a {
-            color: #aaa;
-            text-decoration: none;
-            padding: 10px 15px;
-            font-weight: bold;
-            text-transform: uppercase;
-            border: 1px solid transparent;
-            display: inline-block;
-        }
-        nav a:hover {
-            color: #d4af37;
-            border: 1px solid #444;
-            background: #222;
-        }
-        .content-wrapper {
-            display: flex;
-            gap: 20px;
-        }
-        main {
-            flex: 2;
-        }
-        aside {
-            flex: 1;
-            background: #151515;
-            padding: 15px;
-            border: 1px solid #2d2d2d;
-            border-radius: 4px;
-            height: fit-content;
-        }
-        h2, h3 {
-            color: #d4af37;
-            border-bottom: 1px solid #333;
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        h2:first-of-type {
-            margin-top: 0;
-        }
-        .stats-table, .download-table, .items-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        .stats-table td, .download-table td, .download-table th, .items-table td, .items-table th {
-            padding: 10px;
-            border-bottom: 1px solid #222;
-        }
-        .download-table th, .items-table th {
-            color: #d4af37;
-            text-align: left;
-            border-bottom: 2px solid #333;
-            font-size: 0.9em;
-        }
-        .stats-table td:first-child {
-            font-weight: bold;
-            color: #aaa;
-            width: 60%;
-        }
-        .stats-table td:last-child {
-            color: #fff;
-            text-align: right;
-        }
-        .status-online {
-            color: #00ff00;
-            font-weight: bold;
-        }
-        .btn-download, .btn-submit {
-            background-color: #d4af37;
-            color: #111;
-            padding: 6px 12px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 3px;
-            text-transform: uppercase;
-            font-size: 0.85em;
-            border: none;
-            cursor: pointer;
-            display: inline-block;
-        }
-        .btn-download:hover, .btn-submit:hover {
-            background-color: #fff;
-            color: #111;
-        }
-        .item-grade {
-            background: #222;
-            color: #ffaa00;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-size: 0.8em;
-            font-weight: bold;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #333;
-            font-size: 0.8em;
-            color: #666;
-        }
+        html { scroll-behavior: smooth; }
+        body { background-color: #111; color: #ddd; font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: #1c1c1c; padding: 20px; border: 1px solid #333; border-radius: 5px; }
+        header { text-align: center; border-bottom: 2px solid #444; padding-bottom: 20px; margin-bottom: 20px; }
+        h1 { color: #d4af37; margin: 0; font-size: 2.5em; text-shadow: 2px 2px 4px #000; }
+        nav { text-align: center; margin-bottom: 30px; position: sticky; top: 0; background: #1c1c1c; padding: 10px 0; border-bottom: 1px solid #222; z-index: 100; }
+        nav a { color: #aaa; text-decoration: none; padding: 10px 15px; font-weight: bold; text-transform: uppercase; border: 1px solid transparent; display: inline-block; }
+        nav a:hover { color: #d4af37; border: 1px solid #444; background: #222; }
+        .content-wrapper { display: flex; gap: 20px; }
+        main { flex: 2; }
+        aside { flex: 1; background: #151515; padding: 15px; border: 1px solid #2d2d2d; border-radius: 4px; height: fit-content; }
+        h2, h3 { color: #d4af37; border-bottom: 1px solid #333; padding-bottom: 5px; margin-top: 30px; }
+        h2:first-of-type { margin-top: 0; }
+        .stats-table, .download-table, .items-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .stats-table td, .download-table td, .download-table th, .items-table td, .items-table th { padding: 10px; border-bottom: 1px solid #222; }
+        .download-table th, .items-table th { color: #d4af37; text-align: left; border-bottom: 2px solid #333; font-size: 0.9em; }
+        .stats-table td:first-child { font-weight: bold; color: #aaa; width: 60%; }
+        .stats-table td:last-child { color: #fff; text-align: right; }
+        .status-online { color: #00ff00; font-weight: bold; }
+        .btn-download, .btn-submit { background-color: #d4af37; color: #111; padding: 6px 12px; text-decoration: none; font-weight: bold; border-radius: 3px; text-transform: uppercase; font-size: 0.85em; border: none; cursor: pointer; display: inline-block; }
+        .btn-download:hover, .btn-submit:hover { background-color: #fff; color: #111; }
+        .item-grade { background: #222; color: #ffaa00; padding: 2px 6px; border-radius: 3px; font-size: 0.8em; font-weight: bold; }
+        footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #333; font-size: 0.8em; color: #666; }
     </style>
 </head>
 <body>
-
 <div class="container">
     <header>
         <h1>L2 GOLD</h1>
-        <p style="color: #888; font-style: italic;">The Most Famous Lineage 2 Interlude Custom Server Since 2008</p>
+        <p style="color: #888; font-style: italic;">The Most Famous Lineage 2 Interlude Custom Server</p>
     </header>
-
     <nav>
         <a href="#news">News</a>
         <a href="#register">Register</a>
@@ -161,31 +43,22 @@
         <a href="#download-info">Download</a>
         <a href="https://discord.gg" target="_blank" style="color: #7289da;">Our Discord</a>
     </nav>
-
     <div class="content-wrapper">
         <main>
-            <!-- News Section -->
             <section id="news">
                 <h2>Server Grand Opening!</h2>
                 <p style="font-size: 0.8em; color: #666;">Published: 2008-10-14 | Author: Admin-Gold</p>
-                <p>Welcome to the legendary L2 Gold server! Prepare for an unparalleled battle. Our server offers unique balance, custom weapons (L2Gold Weapons), special PvP zones, and stable performance without any disruptions.</p>
-                <p>Don't forget to download our official system files (Patch) and register your account using Auto-Registration inside the game client.</p>
+                <p>Welcome to the legendary L2 Gold server! Our server offers unique balance, authentic L2Gold Weapons, special PvP zones, and stable performance without any disruptions.</p>
             </section>
-
-            <!-- Register Section -->
             <section id="register">
                 <h2>Account Registration</h2>
                 <div style="background: #222; padding: 15px; border-left: 4px solid #d4af37; border-radius: 4px; margin-bottom: 20px;">
                     <p style="margin: 0; color: #fff; font-weight: bold;">ℹ️ Auto-Registration is Enabled!</p>
-                    <p style="margin: 5px 0 0 0; color: #aaa; font-size: 0.9em;">You don't need to create an account on the website. Just run the game client, type your desired account name and password in the login screen, and it will be created automatically!</p>
+                    <p style="margin: 5px 0 0 0; color: #aaa; font-size: 0.9em;">Just run the game client, type your desired account name and password in the login screen, and it will be created automatically!</p>
                 </div>
             </section>
-
-            <!-- Custom Items Section -->
             <section id="custom-items">
                 <h2>Official L2 Gold Custom Weapons & Shields List</h2>
-                <p style="color: #ccc;">The complete list of authentic L2 Gold custom items with unique retail Special Abilities and PvP stats enhancement:</p>
-                
                 <table class="items-table">
                     <thead>
                         <tr>
@@ -196,45 +69,40 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- 1. Bow of Halisha -->
                         <tr>
-                            <td>
-                                <div style="display: flex; align-items: center; gap: 12px; min-width: 180px;">
-                                    <img src="https://l2wiki.com" alt="L2Gold" style="width: 28px; height: 28px; border: 1px solid #d4af37; border-radius: 3px; flex-shrink: 0;">
-                                    <span style="font-weight: bold; color: #fff;">Bow of Halisha</span>
-                                </div>
-                            </td>
+                            <td><div style="display: flex; align-items: center; gap: 12px;"><img src="https://l2wiki.com" style="width: 28px; height: 28px; border: 1px solid #d4af37; border-radius: 3px; flex-shrink: 0;"><span style="font-weight: bold; color: #fff;">Bow of Halisha</span></div></td>
                             <td><span class="item-grade">L2Gold</span></td>
-                            <td>
-                                <span style="color: #d4af37; font-weight: bold;">Critical Attack +95 / Accuracy +6</span><br>
-                                <span style="color: #fff; font-size: 0.9em; display: inline-block; margin-top: 4px;">Increases Critical Attack and Accuracy. Enhances damage to target during PvP and stacks extra P.Atk/M.Atk on landing hits.</span>
-                            </td>
+                            <td><span style="color: #d4af37; font-weight: bold;">Critical Attack +95 / Accuracy +6</span><br><span style="color: #fff; font-size: 0.9em;">Increases Critical Attack and Accuracy. Enhances damage to target during PvP and stacks extra power on landing hits.</span></td>
                             <td style="color: #fff;">Raid Boss Drop</td>
                         </tr>
-
-                        <!-- 2. Doll Knife -->
                         <tr>
-                            <td>
-                                <div style="display: flex; align-items: center; gap: 12px; min-width: 180px;">
-                                    <img src="https://l2wiki.com" alt="L2Gold" style="width: 28px; height: 28px; border: 1px solid #d4af37; border-radius: 3px; flex-shrink: 0;">
-                                    <span style="font-weight: bold; color: #fff;">Doll Knife</span>
-                                </div>
-                            </td>
+                            <td><div style="display: flex; align-items: center; gap: 12px;"><img src="https://l2wiki.com" style="width: 28px; height: 28px; border: 1px solid #d4af37; border-radius: 3px; flex-shrink: 0;"><span style="font-weight: bold; color: #fff;">Doll Knife</span></div></td>
                             <td><span class="item-grade">L2Gold</span></td>
-                            <td>
-                                <span style="color: #d4af37; font-weight: bold;">Critical Attack +95 / Critical P.Atk +265</span><br>
-                                <span style="color: #fff; font-size: 0.9em; display: inline-block; margin-top: 4px;">Increases Critical Attack rate. Boosts physical attack power drastically during a critical blow. Enhances PvP damage.</span>
-                            </td>
+                            <td><span style="color: #d4af37; font-weight: bold;">Critical Attack +95 / Critical P.Atk +265</span><br><span style="color: #fff; font-size: 0.9em;">Increases Critical Attack rate. Boosts physical attack power drastically during a critical blow.</span></td>
                             <td style="color: #fff;">Raid Boss Drop</td>
                         </tr>
-
-                        <!-- 3. Doll Knife * Doll Knife -->
                         <tr>
-                            <td>
-                                <div style="display: flex; align-items: center; gap: 12px; min-width: 180px;">
-                                    <img src="https://l2wiki.com" alt="L2Gold" style="width: 28px; height: 28px; border: 1px solid #d4af37; border-radius: 3px; flex-shrink: 0;">
-                                    <span style="font-weight: bold; color: #fff;">Doll Knife * Doll Knife</span>
-                                </div>
-                            </td>
+                            <td><div style="display: flex; align-items: center; gap: 12px;"><img src="https://l2wiki.com" style="width: 28px; height: 28px; border: 1px solid #d4af37; border-radius: 3px; flex-shrink: 0;"><span style="font-weight: bold; color: #fff;">Doll Knife * Doll Knife</span></div></td>
                             <td><span class="item-grade">L2Gold</span></td>
-                            <td>
+                            <td><span style="color: #d4af37; font-weight: bold;">Atk. Speed +7% / Accuracy +6</span><br><span style="color: #fff; font-size: 0.9em;">Iconic custom dual daggers. Increases attack speed, physical accuracy, and deals increased output damage during PvP.</span></td>
+                            <td style="color: #fff;">High-tier Craft</td>
+                        </tr>
+                        <tr>
+                            <td><div style="display: flex; align-items: center; gap: 12px;"><img src="https://l2wiki.com" style="width: 28px; height: 28px; border: 1px solid #d4af37; border-radius: 3px; flex-shrink: 0;"><span style="font-weight: bold; color: #fff;">Giant Trident</span></div></td>
+                            <td><span class="item-grade">L2Gold</span></td>
+                            <td><span style="color: #d4af37; font-weight: bold;">Evasion +3 / Critical P.Atk +265</span><br><span style="color: #fff; font-size: 0.9em;">Increases Evasion and inflicts heavy critical strike damage. Highly effective for stealth setups.</span></td>
+                            <td style="color: #fff;">Raid Boss Drop</td>
+                        </tr>
+                        <tr>
+                            <td><div style="display: flex; align-items: center; gap: 12px;"><img src="https://l2wiki.com" style="width: 28px; height: 28px; border: 1px solid #d4af37; border-radius: 3px; flex-shrink: 0;"><span style="font-weight: bold; color: #fff;">Sword of Vampire</span></div></td>
+                            <td><span class="item-grade">L2Gold</span></td>
+                            <td><span style="color: #d4af37; font-weight: bold;">Critical Attack +95 / Max HP +25%</span><br><span style="color: #fff; font-size: 0.9em;">One-handed sword. Increases critical strike chance and grants a massive 25% boost to maximum Health Points.</span></td>
+                            <td style="color: #fff;">Raid Boss Drop</td>
+                        </tr>
+                        <tr>
+                            <td><div style="display: flex; align-items: center; gap: 12px;"><img src="https://l2wiki.com" style="width: 28px; height: 28px; border: 1px solid #d4af37; border-radius: 3px; flex-shrink: 0;"><span style="font-weight: bold; color: #fff;">Sword of Apostle</span></div></td>
+                            <td><span class="item-grade">L2Gold</span></td>
+                            <td><span style="color: #d4af37; font-weight: bold;">Accuracy +6 / Max HP +25%</span><br><span style="color: #fff; font-size: 0.9em;">Increases physical accuracy and maximum HP pool by 25%. Perfect choice for heavy tanks.</span></td>
+                            <td style="color: #fff;">Mantra Manager</td>
+                        </tr>
+                        <tr>
